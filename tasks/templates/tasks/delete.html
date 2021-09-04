@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete task</title>
+    <style>
+        body {
+            background: #21795d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            padding: 20px;
+            font-weight: 600;
+            text-align: center;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 1.8rem;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 20vh;
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        .question-container {
+            color: #FFF;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .task {
+            width: 60vw;
+            word-wrap: break-word;
+        }
+
+        .btn-container {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 60vw;
+        }
+
+        .cancel-btn {
+            width: 20vw;
+            background: #DB4437;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #FFF;
+            padding: 5px 10px;
+            height: 30px;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            width: 20vw;
+            background: #0F9D58;
+            color: #FFF;
+            outline: none;
+            cursor: pointer;
+            border: none;
+            padding: 5px 10px;
+            height: 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1 class="header">Delete Task</h1>
+<div class="container">
+    <div class="question-container">
+        <p class="content">Do you want to delete this task?</p>
+        <p class="task">Task: {{ item }}</p>
+    </div>
+    <div class="btn-container">
+        <a class="cancel-btn" href="{% url 'index' %}">Cancel</a>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input class="submit-btn" type="submit" name="Confirm">
+        </form>
+    </div>
+</div>
+</body>
+</html>

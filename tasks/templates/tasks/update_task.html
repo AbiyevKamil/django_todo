@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+    <style>
+        body {
+            background: #21795d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            padding: 20px;
+            font-weight: 600;
+            text-align: center;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 1.8rem;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 20vh;
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        .input {
+            width: 100%;
+        }
+
+        .input * {
+            width: 100%;
+            padding: 10px 18px;
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.2s linear;
+            color: #21795d;
+        }
+
+        .input *:focus {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .checkbox {
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            min-width: 150px;
+            justify-content: space-around;
+            padding: 15px 16px;
+            margin: 5px 0;
+        }
+
+        .submit-btn {
+            min-width: 100px;
+            padding: 6px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: #21795d;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: all 0.2s linear;
+        }
+
+        .submit-btn:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+
+    </style>
+</head>
+<body>
+<h3 class="header">Update Task</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="input">
+            {{ form.title }}
+        </div>
+        <div class="checkbox">
+            <p class="completed">Completed:</p>
+            {{ form.complete }}
+        </div>
+        <input class="submit-btn" type="submit" name="Update task">
+    </div>
+</form>
+</body>
+</html>
